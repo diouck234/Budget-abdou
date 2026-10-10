@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget automatique - Abdou</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div class="section">
+        <h1>Budget automatique - Abdou</h1>
+
+        <!-- SALAIRE -->
+        <div class="form">
+            <h2>Entrer ton salaire</h2>
+            <input id="salaire" type="number" placeholder="Ton salaire en €">
+            <button onclick="calculerBudget()">Calculer</button>
+        </div>
+
+        <!-- RÉSULTATS -->
+        <div class="resultats">
+            <h2>Résultats</h2>
+            <p>Dépenses obligatoires (55%) : <span id="depenses">0</span> €</p>
+            <p>Divertissement (10%) : <span id="divertissement">0</span> €</p>
+            <p>Objectifs / Épargne (15%) : <span id="epargne">0</span> €</p>
+            <p>Autres / Reste (20%) : <span id="reste">0</span> €</p>
+        </div>
+
+        <!-- GRAPHIQUE -->
+        <h2>Graphique du budget</h2>
+        <canvas id="budgetChart" width="400" height="200"></canvas>
+
+        <!-- HISTORIQUE ÉPARGNE (TABLE) -->
+        <h2>Historique de l’épargne</h2>
+        <table id="historiqueEpargneTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Montant (€)</th>
+                    <th>Total (€)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+        <!-- ÉPARGNE MENSUELLE -->
+        <h2>Épargne mensuelle</h2>
+        <input id="epargneMois" type="number" placeholder="Argent mis de côté ce mois">
+        <button onclick="ajouterEpargne()">Ajouter à l'épargne</button>
+
+        <h3>Total épargne : <span id="totalEpargne">0</span> €</h3>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+/* ===== RESET ===== */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    font-family: 'Inter', sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+/* ===== TITRES ===== */
+h1, h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    width: 100%;
+   .section {
+    min-height: fit-content;
+    background: white;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    margin-bottom: 22px;
+}
+
+/* ===== INPUTS ===== */
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* ===== BOUTONS ===== */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #3A7AFE;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #2f63d6;
+}
+
+/* ===== TABLEAU HISTORIQUE ===== */
+#historiqueEpargneTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+#historiqueEpargneTable th {
+    background: #3A7AFE;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+#historiqueEpargneTable td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+}
+
+#historiqueEpargneTable tr:last-child td {
+    border-bottom: none;
+}
+
+#historiqueEpargneTable button {
+    background: red;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+/* ===== ANIMATION TABLE ===== */
+#historiqueEpargneTable tr {
+    animation: rowFade 0.3s ease;
+}
+
+@keyframes rowFade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SWITCH (Thèmes) ===== */
+.switch {
+    position: relative;
+    width: 55px;
+    height: 28px;
+    background: #ccc;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.switch::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: 0.3s;
+}
+
+.switch.active {
+    background: #3A7AFE;
+}
+
+.switch.active::after {
+    left: 29px;
+}
+
+
+/* ===== MODE SOMBRE AUTOMATIQUE ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e5e5e5;
+    }
+
+    .section {
+        background: #1e1e1e;
+        box-shadow: none;
+    }
+
+    input, button {
+        background: #1e1e1e;
+        color: #e5e5e5;
+        border-color: #333;
+    }
+
+    #historiqueEpargneTable th {
+        background: #2a2a2a;
+        color: #fff;
+    }
+
+    #historiqueEpargneTable td {
+        border-bottom: 1px solid #333;
+    }
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #121212;
+        color: #e5e5e5;
+    }
+}
